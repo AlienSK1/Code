@@ -1,0 +1,28 @@
+import java.util.*;
+
+public class coinFlip 
+{   public static  void coinFlip()
+	{ Scanner input = new Scanner(System.in);
+	  System.out.println("Quante volte vuoi lanciare la moneta? :");
+	  int n = input.nextInt();
+	  int[] ret = {0,0};
+	  ret = coinFlip(n , ret);
+	  System.out.println("Sono uscite : testa" + ret[0] + ", coda" + ret[1]);
+	}
+
+  private static int[] coinFlip(int n , int[] ret)
+  { Random rand = new Random();
+    int i = 0;
+    while(i<n)
+    {  int lancio = rand.nextInt(2);
+       if(lancio == 0)
+       {ret[0] ++; // incremento la testa   
+       }
+       else
+       { ret[1]++; //incremento la coda;  
+       }
+       i++;
+    }
+    return ret;
+  }
+}
